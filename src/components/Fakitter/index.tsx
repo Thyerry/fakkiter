@@ -7,16 +7,14 @@ import {
   FakitterText,
   FakitterUsername,
 } from './styles';
-import {Fakitter} from '../../services/fakitters';
-// import Avatar from '../Avatar';
+import { Fakitter } from '../../services/fakitters';
 
 type FakitterProps = {
   fakitter: Fakitter;
 };
-const FakitterComp = ({fakitter}: FakitterProps) => {
+const FakitterComp = ({ fakitter }: FakitterProps) => {
   return (
     <FakitterContainer>
-      {/*<Avatar user={fakitter.user} size={40} />*/}
       <FakitterContent>
         <FakitterHeader>
           <FakitterAuthor>{fakitter.user.name}</FakitterAuthor>

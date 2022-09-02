@@ -9,6 +9,6 @@ type TitleProps = {
 export default styled.Text<TitleProps>`
   font-size: ${props => props.size || '16px'};
   font-weight: ${props => props.weight || 'normal'};
-  color: ${props => props.color || '#000'};
+  color: ${({ theme }) => theme.secondary.text};
   text-align: ${props => props.align || 'left'};
 `;

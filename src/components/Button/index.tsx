@@ -5,6 +5,8 @@ import { ButtonText, Container, ActivityIndicatorView } from './styles';
 interface ButtonProps extends TouchableOpacityProps {
   title: string;
   loading: boolean;
+  width?: string;
+  borderRadius?: number;
 }
 
 export const Button = ({ title, loading, ...rest }: ButtonProps) => (

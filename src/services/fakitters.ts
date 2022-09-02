@@ -69,11 +69,14 @@ const fakitterMapper = (response: GetFakittersResponse): Fakitter => {
 };
 
 type GetFakittersServiceParams = {
-  page: number,
-  pageSize: number
-}
+  page: number;
+  pageSize: number;
+};
 
-export const getFakittersService = async ({page, pageSize}: GetFakittersServiceParams): Promise<Fakitter[]> => {
+export const getFakittersService = async ({
+  page,
+  pageSize,
+}: GetFakittersServiceParams): Promise<Fakitter[]> => {
   const { data } = await apiConn().get<
     GenericPaginationResponse<GetFakittersResponse>
   >('fakitters', {
@@ -81,7 +84,7 @@ export const getFakittersService = async ({page, pageSize}: GetFakittersServiceP
       populate: '*',
       sort: 'createdAt:desc',
       'pagination[page]': page,
-      'pagination[pageSize]': pageSize
+      'pagination[pageSize]': pageSize,
     },
   });
 

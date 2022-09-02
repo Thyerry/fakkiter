@@ -1,9 +1,14 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.TouchableOpacity`
-  width: 100%;
+type ButtonProps = {
+  width?: string;
+  borderRadius?: number;
+};
+
+export const Container = styled.TouchableOpacity<ButtonProps>`
+  width: ${props => props.width || '100%'};
   background-color: ${({ theme }) => theme.primary.border};
-  border-radius: 8px;
+  border-radius: ${props => props.borderRadius || '8px'};
   padding: 16px 0;
   margin-top: 8px;
 
